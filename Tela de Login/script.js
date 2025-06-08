@@ -5,3 +5,9 @@ function handleReset(event) {
   // Simulação de envio e retorno à tela de login
   window.location.href = "index.html";
 }
+
+function handleCadastro(event) {
+  event.preventDefault();
+  alert("Conta criada com sucesso!");
+  window.location.href = "index.html"; // Volta para a tela de login
+}
