@@ -16,19 +16,27 @@
       <h1>Criar Conta</h1>
 
       <div class="input-box">
-        <input type="text" placeholder="Nome completo" required>
+        <input type="text" name="nome" placeholder="Nome completo" required>
         <i class='bx bxs-user'></i>
       </div>
 
       <div class="input-box">
-        <input type="email" placeholder="E-mail" required>
+        <input type="email" name="email" placeholder="E-mail" required>
         <i class='bx bxs-envelope'></i>
       </div>
 
       <div class="input-box">
-        <input type="password" placeholder="Senha" required>
+        <input type="password" name="Senha" placeholder="Senha" required>
         <i class='bx bxs-lock-alt'></i>
       </div>
+      <div class="input-box">
+          <select name="tipo" required>
+            <option value="comum">Usuário Comum (Brasileirão)</option>
+            <option value="premium">Usuário Premium (Ligas Estrangeiras)</option>
+          </select>
+        <i class='bx bxs-crown'></i>
+      </div>
+      
 
       <button type="submit" class="login">Criar Conta</button>
 
