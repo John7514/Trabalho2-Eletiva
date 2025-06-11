@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela do Brasileirão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #0f0f1e;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            table-layout: fixed;
+        }
+        th, td {
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .back-button {
+            display: block;
+            margin: 25px auto 10px;
+            padding: 10px 25px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+        .team-logo {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .team-name {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+        }
+        .posicao {
+            font-weight: bold;
+            text-align: center;
+        }
+        .table-header {
+            text-align: center;
+        }
+
+        nav ul li a {
+        color: white;
+        text-decoration: none;
+        
+        }
+
+        nav ul li a:hover {
+        color: #ccc; 
+        }
+
+        /* Larguras específicas para cada coluna */
+        th:nth-child(1), td:nth-child(1) { width: 10%; }  /* Posição */
+        th:nth-child(2), td:nth-child(2) { width: 20%; text-align: left; padding-left: 30px; }  /* Time */
+        th:nth-child(3), td:nth-child(3) { width: 8%; }  /* Pontos */
+        th:nth-child(4), td:nth-child(4) { width: 7%; }  /* Jogos */
+        th:nth-child(5), td:nth-child(5) { width: 8%; }  /* Vitórias */
+        th:nth-child(6), td:nth-child(6) { width: 8%; }  /* Empates */
+        th:nth-child(7), td:nth-child(7) { width: 8%; }  /* Derrotas */
+        th:nth-child(8), td:nth-child(8) { width: 8%; }  /* Gols Pró */
+        th:nth-child(9), td:nth-child(9) { width: 9%; }  /* Gols Contra */
+        th:nth-child(10), td:nth-child(10) { width: 9%; } /* Saldo */
+    </style>
+</head>
+<body>
+
+     <nav>
+        <ul>
+            
+            <li><a href="../Tela Inicial/index2.html">Voltar</a> </li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Tabela do Brasileirão</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th class="table-header">Posição</th>
+                    <th class="table-header">Times</th>
+                    <th class="table-header">Pontos</th>
+                    <th class="table-header">Jogos</th>
+                    <th class="table-header">Vitórias</th>
+                    <th class="table-header">Empates</th>
+                    <th class="table-header">Derrotas</th>
+                    <th class="table-header">Gols Pró</th>
+                    <th class="table-header">Gols Contra</th>
+                    <th class="table-header">Saldo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="posicao">1</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/flamengo/logo-flamengo-256.png" alt="Flamengo" class="team-logo">
+                            Flamengo
+                        </div>
+                    </td>
+                    <td>24</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>24</td>
+                    <td>4</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="posicao">2</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/cruzeiro/logo-cruzeiro-256.png" alt="Cruzeiro" class="team-logo">
+                            Cruzeiro
+                        </div>
+                    </td>
+                    <td>23</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>17</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td class="posicao">3</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/red-bull-bragantino/logo-red-bull-bragantino-256.png" alt="Red Bull Bragantino" class="team-logo">
+                            Red Bull Bragantino 
+                        </div>
+                    </td>
+                    <td>23</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>14</td>
+                    <td>8</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="posicao">4</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/palmeiras/logo-palmeiras-256.png" alt="Palmeiras" class="team-logo">
+                            Palmeiras 
+                        </div>
+                    </td>
+                    <td>22</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="posicao">5</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/fluminense/logo-fluminense-256.png" alt="Fluminense" class="team-logo">
+                            Fluminense 
+                        </div>
+                    </td>
+                    <td>20</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>15</td>
+                    <td>12</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td class="posicao">6</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/botafogo/logo-botafogo-256.png" alt="Botafogo" class="team-logo">
+                            Botafogo 
+                        </div>
+                    </td>
+                    <td>18</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td class="posicao">7</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/bahia/logo-bahia-256.png" alt="Bahia" class="team-logo">
+                            Bahia
+                        </div>
+                    </td>
+                    <td>18</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="posicao">8</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/mirassol/logo-mirassol-256.png" alt="Mirassol" class="team-logo">
+                            Mirassol 
+                        </div>
+                    </td>
+                    <td>17</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="posicao">9</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-256.png" alt="Atlético Mineiro" class="team-logo">
+                            Atletico Mineiro MG
+                        </div>
+                    </td>
+                    <td>17</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="posicao">10</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/ceara/logo-ceara-256.png" alt="Ceará" class="team-logo">
+                            Ceará 
+                        </div>
+                    </td>
+                    <td>15</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>13</td>
+                    <td>11</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td class="posicao">11</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/corinthians/logo-corinthians-256.png" alt="Corinthians" class="team-logo">
+                            Corinthians 
+                        </div>
+                    </td>
+                    <td>15</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>12</td>
+                    <td>14</td>
+                    <td>-2</td>
+                </tr>
+                <tr>
+                    <td class="posicao">12</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/gremio/logo-gremio-256.png" alt="Grêmio" class="team-logo">
+                            Gremio
+                        </div>
+                    </td>
+                    <td>15</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>14</td>
+                    <td>-3</td>
+                </tr>
+
+                                <tr>
+                    <td class="posicao">13</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/sao-paulo/logo-sao-paulo-256.png" alt="São Paulo" class="team-logo">
+                            São Paulo 
+                        </div>
+                    </td>
+                    <td>12</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>-2</td>
+                </tr>
+                <tr>
+                    <td class="posicao">14</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/internacional/logo-internacional-256.png" alt="Internacional" class="team-logo">
+                            Internacional 
+                        </div>
+                    </td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>12</td>
+                    <td>16</td>
+                    <td>-4</td>
+                </tr>
+                <tr>
+                    <td class="posicao">15</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/vasco-da-gama/logo-vasco-da-gama-256.png" alt="Vasco da Gama" class="team-logo">
+                            Vasco 
+                        </div>
+                    </td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>11</td>
+                    <td>15</td>
+                    <td>-4</td>
+                </tr>
+                <tr>
+                    <td class="posicao">16</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/vitoria/logo-vitoria-256.png" alt="Vitória" class="team-logo">
+                            Vitória 
+                        </div>
+                    </td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td>14</td>
+                    <td>-4</td>
+                </tr>
+                <tr>
+                    <td class="posicao">17</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/fortaleza/logo-fortaleza-256.png" alt="Fortaleza" class="team-logo">
+                            Fortaleza 
+                        </div>
+                    </td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td>15</td>
+                    <td>-5</td>
+                </tr>
+                <tr>
+                    <td class="posicao">18</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/santos/logo-santos-256.png" alt="Santos" class="team-logo">
+                            Santos 
+                        </div>
+                    </td>
+                    <td>8</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>-4</td>
+                </tr>
+                <tr>
+                    <td class="posicao">19</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://logodetimes.com/times/juventude/logo-juventude-256.png" alt="Juventude" class="team-logo">
+                            Juventude 
+                        </div>
+                    </td>
+                    <td>8</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>24</td>
+                    <td>-16</td>
+                </tr>
+                <tr>
+                    <td class="posicao">20</td>
+                    <td>
+                        <div class="team-name">
+                            <img src="https://w7.pngwing.com/pngs/671/380/png-transparent-sport-club-do-recife-dream-league-soccer-campeonato-brasileiro-serie-a-sports-association-football-sport-logo-association-thumbnail.png" alt="Sport Recife" class="team-logo">
+                            Recife
+                        </div>
+                    </td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>18</td>
+                    <td>-13</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+    </div>
+</body>
+</html>
+            
+        
