@@ -1,9 +1,12 @@
 <?php
 header('Content-Type: application/json');
-session_start();
+session_start([
+    'cookie_lifetime' => 86400, // 1 dia
+]);
+
 include 'includes/conexao.php';
 
-$email = $_POST['email'] ?? '';
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $senha = $_POST['senha'] ?? '';
 
 // Busca usuário no banco

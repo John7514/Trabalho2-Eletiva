@@ -1,3 +1,11 @@
+// Renomeie para index2.php e adicione no início:
+<?php 
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header('Location: ../Tela de Login/index.html');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

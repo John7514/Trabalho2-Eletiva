@@ -12,13 +12,13 @@
         <form id="loginForm">
             <h1>Login</h1>
             <div class="input-box">
-                <input id="usuario" placeholder="Usuário" type="email">
-                <i class="bx bxs-user"></i>
-            </div>
-            <div class="input-box">
-                <input id="senha" placeholder="Senha" type="password">
-                <i class="bx bxs-lock-alt"></i>
-            </div>
+        <input name="email" type="email" placeholder="E-mail" required> 
+        <i class="bx bxs-envelope"></i> 
+    </div>
+    <div class="input-box">
+        <input name="senha" type="password" placeholder="Senha" required> 
+        <i class="bx bxs-lock-alt"></i>
+    </div>
             <div class="remember-forgot">
                 <label>
                     <input type="checkbox">
@@ -36,17 +36,29 @@
     </main>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            const usuario = document.getElementById('usuario').value.trim();
-            const senha = document.getElementById('senha').value.trim();
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target); // Usa o formulário diretamente
 
-            if (usuario !== "" && senha !== "") {
-                window.location.href = "../Tela Inicial/index2.html";
-            } else {
-                alert("Por favor, preencha todos os campos.");
-            }
+    try {
+        const response = await fetch('../includes/login.php', {
+            method: 'POST',
+            body: formData
         });
+        
+        const data = await response.json();
+        console.log("Resposta:", data); // Debug
+
+        if (data.success) {
+            window.location.href = "../dashboard.php";
+        } else {
+            alert("Erro: " + (data.message || "Resposta inválida do servidor"));
+        }
+    } catch (error) {
+        console.error("Erro no fetch:", error);
+        alert("Falha na comunicação com o servidor. Verifique o console.");
+    }
+});
     </script>
 </body>
 </html>

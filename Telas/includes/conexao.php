@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$user = "root"; // Altere se necessário
-$pass = "";     // Altere se necessário
+$user = "root"; 
+$pass = "";   
 $db   = "sistema_faculdade";
 
 $conn = new mysqli($host, $user, $pass, $db);
