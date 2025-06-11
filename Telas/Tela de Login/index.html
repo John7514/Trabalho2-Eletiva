@@ -3,37 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'rel='stylesheet'> 
-    <link rel="stylesheet"  href="../assets/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link rel="stylesheet" href="../assets/styles.css">
     <title>Login</title>
 </head>
 <body>
     <main class="container">
-        <form onsubmit="handleLogin(event)">
+        <form id="loginForm">
             <h1>Login</h1>
             <div class="input-box">
-                <input name="email" placeholder="Usuário" type="email">
-                <i class="bx bxs-envelope"></i>
+                <input id="usuario" placeholder="Usuário" type="email">
+                <i class="bx bxs-user"></i>
             </div>
-             <div class="input-box">
-                <input name="senha"placeholder="Senha" type="password">
-                 <i class="bx bxs-lock-alt"></i>
+            <div class="input-box">
+                <input id="senha" placeholder="Senha" type="password">
+                <i class="bx bxs-lock-alt"></i>
             </div>
             <div class="remember-forgot">
                 <label>
-                <input type="checkbox">
-                Lembrar senha 
-            </label>
-            <a href="../Tela de Recuperação de Senha/reset-password.html">Esqueci a senha </a>
+                    <input type="checkbox">
+                    Lembrar senha 
+                </label>
+                <a href="../Tela de Recuperação de Senha/reset-password.html">Esqueci a senha</a>
             </div>
 
             <button type="submit" class="login">Login</button>
 
             <div class="register-link">
-                <p>Não tem uma conta?<a href="../Tela de Criar Conta/cadastro.html">Cadastre-se</a></p>
+                <p>Não tem uma conta? <a href="../Tela de Criar Conta/cadastro.html">Cadastre-se</a></p>
             </div>
         </form>
     </main>
-    
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const usuario = document.getElementById('usuario').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+
+            if (usuario !== "" && senha !== "") {
+                window.location.href = "../Tela Inicial/index2.html";
+            } else {
+                alert("Por favor, preencha todos os campos.");
+            }
+        });
+    </script>
 </body>
 </html>
